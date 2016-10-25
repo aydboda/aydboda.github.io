@@ -1,7 +1,5 @@
 'use strict';
-/* 1. Loader */
-$(window).on('load', function() {$('.loader').delay(600).fadeOut('slow');});
-/* 2. init Masonry */
+/* 1. init Masonry */
 var $grid = $('.grid').masonry({
 	itemSelector: '.grid-item',
 	percentPosition: true,

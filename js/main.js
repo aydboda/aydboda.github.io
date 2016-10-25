@@ -1,7 +1,7 @@
 /*
 Table of Contents:
 ------------------
-1. Loader
+1. Loading
 2. Page scrolling
 3. Countdown
 4. OWL Gallery
@@ -9,12 +9,10 @@ Table of Contents:
 6. Select arrow
 7. Map
 
-/* 1. Loader
+/* 1. Loading
 ====================*/
 'use strict';
-$(window).on('load', function() {
-	$('.loader').delay(600).fadeOut('slow');
-});
+
 //jQuery to collapse the navbar on scroll
 var newNav = $('nav.clone');
 $(window).on('scroll', function() {
