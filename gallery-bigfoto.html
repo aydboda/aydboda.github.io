@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="author" content="FairyTheme">
+		<title>Ana y Diego - The Wedding</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<!-- Google fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,400italic%7CPlayfair+Display%7CAmatic+SC:400,700' rel='stylesheet' type='text/css'>
+		<script src="js/vendor/instafeed.min.js"></script>
+	</head>
+
+	<body id="home" class="gallery-page">
+		<!-- Preloader -->
+		<div class="loader">
+			<div class="icon">
+				<img src="img/hearts.svg" alt="" />
+			</div>
+		</div>
+		<!-- Navigation -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="logo" href="/"><img src="img/logo.png" alt=""></a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html#home" class="page-scroll">Inicio</a></li>
+						<li><a href="index.html#about" class="page-scroll">Nosotros</a></li>
+						<li><a href="index.html#love-story" class="page-scroll">Regalos</a></li>
+						<li><a href="index.html#gallery" class="page-scroll">Galería</a></li>
+						<li><a href="index.html#location" class="page-scroll">Ubicación</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Main section -->
+		<section class="main">
+			<h2 class="text-center">¡Nuestras fotos!</h2>
+		</section>
+		<!-- Gallery -->
+		<div class="gallery-grid">
+			<div class="grid" id="instafeed"></div>
+		</div>
+		<script>
+			var template = '';
+			template += '<div class="grid-item col-xs-6 col-sm-4 col-md-3">';
+			template += 	'<a href="{{link}}" data-lightbox="roadtrip">';
+			template += 		'<img src="{{image}}" alt="">';
+			template += 	'</a>';
+			template += '</div>';
+			var feed = new Instafeed({
+				get: 'tagged',
+				tagName: 'aydboda',
+				clientId: '3d9c90848064457ab0d3fd26eb10b493',
+				accessToken: '3444147760.ba4c844.b5bc86926925441fab0b475d2db8da62',
+				template: template,
+				resolution: 'standard_resolution'
+			});
+			feed.run();
+		</script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/vendor/lightbox.min.css">
+		<!-- Libraries -->
+		<script src="js/vendor/jquery.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/vendor/lightbox.min.js"></script>
+
+		<script src="js/vendor/masonry.pkgd.min.js"></script>
+		<script src="js/vendor/isotope.pkgd.min.js"></script>
+		<script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+		<script src="js/gallery.js"></script>
+	</body>
+</html>
