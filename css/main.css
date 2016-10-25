@@ -708,7 +708,7 @@ nav.navbar.navbar-default.pink-color .navbar-nav li a:hover:after {
 	border-radius: 10px;
 	width: 130px;
 	padding: 10px 0;
-	margin: 0 auto 7px;
+	margin: 40px auto 7px;
 }
 .more-button:hover {
 	text-decoration: none;
@@ -719,7 +719,19 @@ nav.navbar.navbar-default.pink-color .navbar-nav li a:hover:after {
 }
 
 .owl-item {
+	height: 210px;
+	position: relative;
 	text-align: center;
+}
+
+.owl-item img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	transform: translate(0,-50%);
+	transform: translate3d(0,-50%,0);
+	margin: 0 auto;
 }
 
 /* -3.9. Gallery Page

@@ -116,11 +116,26 @@ initializeClock('timer', deadline);
 ==================================*/
 
 function renderCarousel() {
-	$('.owl-carousel').owlCarousel({
+	var $owl = $('.owl-carousel');
+	$owl.owlCarousel({
 		loop: true,
 		autoplay: true,
 		responsiveClass: true,
-		items: 4
+		items: 4,
+		afterInit: function () {
+			$owl.find('.owl-wrapper').each(function () {
+				var w = $(this).width() / 2;
+				$(this).width(w);
+				$(this).css('margin', '0 auto');
+			});
+		},
+		afterUpdate: function () {
+			$owl.find('.owl-wrapper').each(function () {
+				var w = $(this).width() / 2;
+				$(this).width(w);
+				$(this).css('margin', '0 auto');
+			});
+		}
 	});
 	// Disable owl-gallery zoom (click events)
 	$('.instafeed-link').click(function(link) {
@@ -153,6 +168,9 @@ function executeInstafeed() {
 		template: template,
 		resolution: 'low_resolution',
 		after: renderCarousel,
+		filter: function(image) {
+			return new Date(image.created_time*1000).getFullYear() === 2016;
+		},
 		links: true
 	});
 	feed.run();

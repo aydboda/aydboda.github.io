@@ -65,7 +65,10 @@
 				clientId: '3d9c90848064457ab0d3fd26eb10b493',
 				accessToken: '3444147760.ba4c844.b5bc86926925441fab0b475d2db8da62',
 				template: template,
-				resolution: 'standard_resolution'
+				resolution: 'standard_resolution',
+				filter: function(image) {
+					return new Date(image.created_time*1000).getFullYear() === 2016;
+				}
 			});
 			feed.run();
 		</script>
